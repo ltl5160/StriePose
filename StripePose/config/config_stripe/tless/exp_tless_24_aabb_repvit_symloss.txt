@@ -1,0 +1,73 @@
+#### training dataset
+bop_challange = True
+bop_path = datasets/
+dataset_name = tless
+training_data_folder = train_pbr
+training_data_folder_2 = none
+val_folder = test_primesense
+test_folder = test_primesense
+second_dataset_ratio = 0.75
+num_workers = 8
+train_obj_visible_theshold = 0.2
+####
+
+
+#### network settings
+BoundingBox_CropSize_image = 256
+BoundingBox_CropSize_GT = 128
+
+BinaryCode_Loss_Type = BCE
+mask_binary_code_loss = True 
+predict_entire_mask = False
+sym_input_training = False
+use_confidence = False
+confidence_threshold = 0
+
+use_histgramm_weighted_binary_loss = True
+sym_aware_loss = True
+sym_bit = [0,1]
+
+output_kernel_size = 1
+
+resnet_layer = 18
+concat_encoder_decoder = True
+####
+
+backbone_name = repvit
+#### pretrain points
+load_pretrain_checkpoint=False
+pretrain_path=zebrapose_lmo/
+####
+
+
+#### check points
+load_checkpoint=True
+check_point_path=result/checkpoints/
+####
+
+
+#### optimizer
+optimizer_type = Adam
+learning_rate = 0.00001
+batch_size = 8
+total_iteration = 380000
+total_epoch = 300
+binary_loss_weight = 3
+#### 
+
+
+#### augmentations
+Detection_reaults = none
+
+padding_ratio = 1.5
+resize_method = crop_square_resize
+
+use_peper_salt= True
+use_motion_blur= True
+
+#binary coding settings
+divide_number_each_itration = 2
+number_of_itration = 24
+
+detector = FCOS
+
